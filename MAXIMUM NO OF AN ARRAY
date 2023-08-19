@@ -3,7 +3,7 @@ using namespace std;
 
 int max(int a[],int size)
 {
-    int maximum=a[0];
+    int maximum=INT_MIN;
     for(int i=0;i<size;i++)
     {
         if(a[i]>maximum)
@@ -20,4 +20,6 @@ int main()
     cout<<"MAXIMUM NUMBER IS : "<<maximum<<endl;
 }
 
-INT_MIN AND INT_MAX ARE LEAST AND LARGEST VALUES OF INT...
+INT_MIN AND INT_MAX ARE THE LEAST AND LARGEST VALUES OF INT...
+MAXIMUM NO-- INT_MIN
+MINIMUM NO-- INT_MAX
