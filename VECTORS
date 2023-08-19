@@ -1,0 +1,118 @@
+VECTOR:: DYNAMIC ARRAY...SIZE NOT FIXED
+BASICS FILE HAS A STATIC ARRAY ONLY... ARRAY WAS ALREADY DEFINED...
+#include<vector>
+SYNTAX::
+vector<data type> vector name;
+
+THE DEFAULT SIZE IS 0...
+WHENEVER VECTOR FILLS, IT DOUBLES IT'S SIZE...
+EXAMPLE::
+vector<int>arr(10,20,30); //3 elements stored in vector 10 20 30
+vector<int>arr(10,-1); //10 elements stored where each is -1
+
+int n;
+cin>>n;
+vector<int>arr(n);
+arr.push_back(5); //insert elements
+arr.pop_back();  //removes last element
+arr.size();   //gives size of vector...no of elements
+arr.empty();   //empty or not
+arr.capacity();  //max space available currently
+
+ARRAY VS VECTOR
+size is pre-defined in arrays we can't add more elements...
+vector doubles its size when it becomes full...
+
+ALL ARRAYS CONCEPTS CAN BE USED IN VECTORS...
+LIKE INDEXING...
+
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main()
+{
+    //CREATING VECTOR
+    vector<int> arr;
+    //SIZE:: NO OF STORED ELEMENTS
+    cout<<"SIZE : "<<arr.size()<<endl;
+    //CAPACITY:: MAXIMUM AVAILABLE SPACE CURRENTLY
+    cout<<"CAPACITY : "<<arr.capacity()<<endl;
+    //INSERTION
+    arr.push_back(5);
+    arr.push_back(6);
+    //PRINTING VECTOR
+    cout<<"ELEMENTS OF VECTOR IS :  ";
+    for(int i=0;i<arr.size();i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+    //REMOVING 
+    arr.pop_back();
+    //RE-PRINTING
+    cout<<"ELEMENTS OF VECTOR AFTER REMOVING IS :  ";
+    for(int i=0;i<arr.size();i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+ 
+    //NEW VECTOR
+    //DEFINED THAT IT HAS 10 ELEMENTS
+    //ALL WILL BE ZERO
+    vector<int> brr(10);
+    //PRINTING VECTOR
+    cout<<"ELEMENTS OF VECTOR WHEN INITIALIZED... ELEMENTS ARE :  ";
+    for(int i=0;i<brr.size();i++)
+    {
+        cout<<brr[i]<<" ";
+    }
+    cout<<endl;
+    //INIALISING EVERY ELEMENT WITH -5
+    vector<int> crr(10,-5);
+    //PRINTING VECTOR
+    cout<<"ELEMENTS OF VECTOR WHEN INITIALIZED (-5)...ELEMENTS ARE :  ";
+    for(int i=0;i<crr.size();i++)
+    {
+        cout<<crr[i]<<" ";
+    }
+    cout<<endl;
+    //DYNAMIC INPUT FROM USER ABOUT NO OF ELEMENTS WITH -5
+    int n;
+    cout<<"ENTER NO OF ELEMENTS: ";
+    cin>>n;
+    vector<int> drr(n,-2);
+    cout<<"ELEMENTS OF VECTOR WHEN INITIALIZED (-2) USER DEFINED NO. ELEMENTS...ELEMENTS ARE :  ";
+    for(int i=0;i<drr.size();i++)
+    {
+        cout<<drr[i]<<" ";
+    }
+    cout<<endl;
+    //VECTOR CREATION NEW WAY...no use mostly
+    vector<int> err{1,2,3,4};
+    //PRINTING VECTOR
+    cout<<"ELEMENTS OF VECTOR IS:  ";
+    for(int i=0;i<err.size();i++)
+    {
+        cout<<err[i]<<" ";
+    }
+    cout<<endl;
+    //EMPTY OR NOT
+    cout<<"EMPTY OR NOT LAST VECTOR : "<<err.empty();
+    
+    return 0;
+}
+
+OUTPUT::
+SIZE : 0
+CAPACITY : 0
+ELEMENTS OF VECTOR IS :  5 6 
+ELEMENTS OF VECTOR AFTER REMOVING IS :  5 
+ELEMENTS OF VECTOR WHEN INITIALIZED... ELEMENTS ARE :  0 0 0 0 0 0 0 0 0 0 
+ELEMENTS OF VECTOR WHEN INITIALIZED (-5)...ELEMENTS ARE :  -5 -5 -5 -5 -5 -5 -5 -5 -5 -5 
+ENTER NO OF ELEMENTS : 3
+ELEMENTS OF VECTOR WHEN INITIALIZED (-2) USER DEFINED NO. ELEMENTS...ELEMENTS ARE :  -2 -2 -2 
+ELEMENTS OF VECTOR IS :  1 2 3 4 
+EMPTY OR NOT LAST VECTOR : 0
