@@ -1,0 +1,20 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int main()
+{
+    vector<int> a{1,2,6,3,4,7,5};
+    int sum=8;
+    for(int i=0;i<a.size();i++)
+    {
+        for(int j=i+1;j<a.size();j++)
+        {
+            if(a[i]+a[j]==sum)
+            cout<<"("<<a[i]<<","<<a[j]<<")"<<endl;
+        }
+    } 
+}
+OUTPUT::
+(1,7)
+(2,6)
+(3,5)
