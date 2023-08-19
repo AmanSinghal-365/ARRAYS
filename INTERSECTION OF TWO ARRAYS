@@ -1,0 +1,49 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+void intersection(vector<int> a,int n,vector<int> b,int m)
+{
+    int k=0;
+    vector<int> c;
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<m;j++)
+        {
+           if(a[i]==b[j])
+            {
+                c.push_back(a[i]);
+                k++;
+            }
+        }
+    }
+    for(int i=0;i<c.size();i++)
+    {
+       cout<<c[i]<<" ";
+    }
+}
+
+int main()
+{
+    int n,m;
+    cin>>n;
+    cin>>m;
+    vector<int> a(n);
+    for(int i=0;i<a.size();i++)
+    {
+        cin>>a[i];
+    }
+    vector<int> b(m);
+    for(int i=0;i<b.size();i++)
+    {
+        cin>>b[i];
+    }
+    intersection(a,n,b,m);
+
+}
+
+OUTPUT::
+N=4
+M=5 
+A=1 2 3 4
+B=1 2 3 5 6
+I=1 2 3 
