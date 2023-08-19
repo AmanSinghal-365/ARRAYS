@@ -11,6 +11,8 @@ void intersection(vector<int> a,int n,vector<int> b,int m)
         {
            if(a[i]==b[j])
             {
+                //marking so that it doesn't match next time
+                b[j]=INT_MIN;
                 c.push_back(a[i]);
                 k++;
             }
