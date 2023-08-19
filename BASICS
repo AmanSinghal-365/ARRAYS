@@ -223,6 +223,30 @@ IF WE DID USE MEMSET() FOR OTHERS THAN 0 AND -1 IT WILL GIVE GARBAGE VALUES...
 ------------------------------------------------------------------------
 
 ARRAYS AND FUNCTIONS:::
+WE DON'T PASS A COPY...WE PASS THE ADDRESS... CHANGES WILL BE MADE IN THE ORIGINAL ARRAY
+ALWAYS SEND SIZE WITH ARRAY IN FUNCTIONS...
+
+#include<iostream>
+#include <cstring>
+using namespace std;
+
+void chng(int a[],int size)
+{
+    a[0]=99;
+    cout<<a[0]<<"  "<<a[1]<<endl;
+}
+int main()
+{
+    int a[]={2,3};
+    int size=2;
+    chng(a,size);
+    cout<<a[0]<<"  "<<a[1];
+}
+OUTPUT
+99 3
+99 3
+
+--------------------------------------------------------------------------
 
 
 
