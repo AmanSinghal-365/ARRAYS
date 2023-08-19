@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+
+int zero(int a[],int size)
+{
+    int zeros=0;
+    for(int i=0;i<size;i++)
+    {
+        if(a[i]==0)
+        zeros++;
+    }
+    return zeros;
+}
+
+int main()
+{
+    int a[]={0,1,0,0,1,1,1,0,1,1};
+    int size=10;
+    int zeros=zero(a,size);
+    cout<<"NO OF ZEROES ARE: "<<zeros<<endl;
+}
