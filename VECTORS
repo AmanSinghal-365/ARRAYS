@@ -26,6 +26,12 @@ vector doubles its size when it becomes full...
 ALL ARRAYS CONCEPTS CAN BE USED IN VECTORS...
 LIKE INDEXING...
 
+VECTORS AND FUNCTION:::
+let's say we have 2 vectors a and b
+function name is fun
+WHERE IT IS CALLED???... fun(a,b);
+WHERE IT IS DEFINED... void fun( vector<int> a, vector<int> b) {  } 
+
 
 #include<iostream>
 #include<vector>
