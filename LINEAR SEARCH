@@ -1,0 +1,35 @@
+EXAMPLE OF AN ARRAY::
+VALUES:: 2 9 6 7 4 1 8
+INDEX::  0 1 2 3 4 5 6
+PROBLEM: ASKED TO FIND WHETHER 6 IS IN THE ARRAY OR NOT...
+PROGRAM::
+#include<iostream>
+using namespace std;
+
+int find(int a[],int size,int key)
+{
+    for(int i=0;i<size;i++)
+    {
+        if(a[i]==key)
+        return true;
+    }
+    return false;
+}
+
+int main()
+{
+    int a[]={6,8,4,0,3,7,2};
+    int size=7;
+    int key;
+    cin>>key;
+    
+    if(find(a,size,key))
+    cout<<"found";
+    else
+    cout<<"not found"<<endl;
+    return 0;
+}
+OUTPUT::
+8
+found
+
