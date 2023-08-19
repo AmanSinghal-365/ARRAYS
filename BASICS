@@ -1,0 +1,228 @@
+DATA STRUCTURE::: ENTITY WHICH STORES DATA
+ARRAYS:::
+COLLECTION OF SIMILAR ITEMS
+ELEMENTS WITH SAME DATATYPE
+CONTINUOUS MEMORY BLOCKS
+MEMORY ADDRESS FOR 5 INTEGERS IN ARRAY...  104 108 112 116 120 (LET'S SAY)
+NEED?? NO NEED TO CREATE MULTIPLE VARIABLES... STORE LARGE NO OF VALUES UNDER ONE NAME...
+MEMORY WASTAGE DUE TO CONTIGUOUS BLOCKS...
+
+CREATION::
+int a=5;
+4 byte space is allocated to box a...
+datatype <array name>[no of elements];
+int a[5];
+5*4 byte space is allocated to continuous boxes a...
+5 integer's continuous space is allocated to a...
+
+BASE ADDRESS / STARTING ADDRESS IS GIVEN TO a...
+104 108 112 116 120 (LET'S SAY)
+a will have the address of 104...
+
+-------------------------------------------------
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[5];
+    cout<<a<<endl;
+    cout<<&a<<endl;
+}
+OUTPUT::
+0xdb81bff8c0
+0xdb81bff8c0
+
+RESULT::
+a has base address.
+&a also shows same address.
+----------------------------------------------------
+
+INITIALIZATION::
+datatype <name>[ ] = { , , , , , , ,};
+int a[ ]={1,2,3,4};
+NO NEED TO GIVE NO OF ELEMENTS IF ARRAY IS INITIALIZED...
+WE CAN INITIALIZE IT TOO...
+IF DECLARED WITH MORE VALUES...IT WILL WORK...REST WILL HAVE 0 / GARBAGE...
+IT WILL BE 0 IF SOME VALUES IS DEFINED MIN 1 VALUE OF ARRAY... int a[3]={2}...2 0 0 
+IT WILL BE GARBAGE VALUES IF JUST ARRAY IS DECLARED...int a[3];...7648084 456836 565756
+IF DECLARED LESS VALUES...ERROR
+
+-----------------------------------------------------
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[]={1,2,3,4};
+    cout<<"INITIALISED SUCCESSFULLY";
+}
+OUTPUT::
+INITIALISED SUCCESSFULLY
+--------------------------------------------------------
+
+INDEX::
+FIRST LOCATION IS 0TH INDEX...
+SECOND LOCATION IS 1ST INDEX...
+N LOCATION IS N-1 TH INDEX...
+a[0]=1   a[1]=2   a[2]=3 
+a[0] = a+0*4 value at this address
+
+--------------------------------------------------------
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[6]={1,2,3,4};
+    cout<<a[56];
+}
+OUTPUT::
+GARBAGE VALUE / SEGMENTATION FAULT
+DEPENDS ON COMPILER...
+------------------------------------------------------------
+PRINTING ALL ELEMENTS OF AN ARRAY::
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[]={1,2,3,4,5};
+    for(int i=0;i<5;i++)
+    {
+        cout<<"VALUE AT "<<i<<"TH INDEX = "<<a[i]<<endl;
+    }
+}
+OUTPUT::
+VALUE AT 0TH INDEX = 1
+VALUE AT 1TH INDEX = 2
+VALUE AT 2TH INDEX = 3
+VALUE AT 3TH INDEX = 4
+VALUE AT 4TH INDEX = 5
+----------------------------------------------------------
+TAKING ARRAY FROM USER AND PRINTING:::
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[10];
+    for(int i=0;i<10;i++)
+    {
+        cin>>a[i];
+    }
+    for(int i=0;i<10;i++)
+    {
+        cout<<"VALUE AT "<<i<<"TH INDEX = "<<a[i]<<endl;
+    }
+}
+OUTPUT::
+1 2 3 4 5 6 7 8 9 10
+VALUE AT 0TH INDEX = 1
+VALUE AT 1TH INDEX = 2
+VALUE AT 2TH INDEX = 3
+VALUE AT 3TH INDEX = 4
+VALUE AT 4TH INDEX = 5
+VALUE AT 5TH INDEX = 6
+VALUE AT 6TH INDEX = 7
+VALUE AT 7TH INDEX = 8
+VALUE AT 8TH INDEX = 9
+VALUE AT 9TH INDEX = 10
+-------------------------------------------------------------
+
+ASSIGNING ALL VALUES AS A PARTICULAR NUMBER::
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[10];
+    for(int i=0;i<10;i++)
+    {
+        cin>>a[i];
+        a[i]=1;
+    }
+
+    for(int i=0;i<10;i++)
+    {
+        cout<<"VALUE AT "<<i<<"TH INDEX = "<<a[i]<<endl;
+    }
+}
+OUTPUT::
+2 3 4 5 4 3 4 2 3 4
+VALUE AT 0TH INDEX = 1
+VALUE AT 1TH INDEX = 1
+VALUE AT 2TH INDEX = 1
+VALUE AT 3TH INDEX = 1
+VALUE AT 4TH INDEX = 1
+VALUE AT 5TH INDEX = 1
+VALUE AT 6TH INDEX = 1
+VALUE AT 7TH INDEX = 1
+VALUE AT 8TH INDEX = 1
+VALUE AT 9TH INDEX = 1
+--------------------------------------------------------------
+
+PRINTING DOUBLES OF EACH ELEMENTS::
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[3];
+    for(int i=0;i<3;i++)
+    {
+        cin>>a[i];
+    }
+    for(int i=0;i<3;i++)
+    {
+        cout<<"DOUBLES OF ELEMENT OF "<<i<<"TH INDEX = "<<2*a[i]<<endl;
+    }
+}
+OUTPUT::
+1 2 3
+DOUBLES OF ELEMENT OF 0TH INDEX = 2
+DOUBLES OF ELEMENT OF 1TH INDEX = 4
+DOUBLES OF ELEMENT OF 2TH INDEX = 6
+-------------------------------------------------------------------
+INITIALIZATION WITH A PARTICULAR NUMBER:::
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[3]={0};
+    for(int i=0;i<3;i++)
+    {
+        cout<<"VALUES AT  "<<i<<"TH INDEX = "<<2*a[i]<<endl;
+    }
+}
+OUTPUT::
+VALUES AT  0TH INDEX = 0
+VALUES AT  1TH INDEX = 0
+VALUES AT  2TH INDEX = 0
+
+RESULT:::THIS IS ONLY POSSIBLE FOR 0 NOT FOR OTHERS...
+--------------------------------------------------------------------
+FOR OTHER MEMBERS...USE MEMSET FUNCTION OR LOOPS...
+memset() can only be used for 0 and -1 in case of integers...include <cstring> header file
+int a[5];
+memset(a, -1, sizeof(a));
+
+#include<iostream>
+#include <cstring>
+using namespace std;
+int main()
+{
+    int a[3];
+    memset(a,0,sizeof(a));
+    for(int i=0;i<3;i++)
+    {
+        cout<<"VALUES AT  "<<i<<"TH INDEX = "<<a[i]<<endl;
+    }
+}
+OUTPUT::
+VALUES AT  0TH INDEX = 0
+VALUES AT  1TH INDEX = 0
+VALUES AT  2TH INDEX = 0
+
+IF WE DID USE MEMSET() FOR OTHERS THAN 0 AND -1 IT WILL GIVE GARBAGE VALUES...
+------------------------------------------------------------------------
+
+ARRAYS AND FUNCTIONS:::
+
+
+
