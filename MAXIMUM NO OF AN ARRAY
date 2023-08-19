@@ -19,3 +19,5 @@ int main()
     int maximum=max(a,size);
     cout<<"MAXIMUM NUMBER IS : "<<maximum<<endl;
 }
+
+INT_MIN AND INT_MAX ARE LEAST AND LARGEST VALUES OF INT...
