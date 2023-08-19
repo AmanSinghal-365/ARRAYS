@@ -35,8 +35,8 @@ void ext(int a[],int size)
     int end=size-1;
     while(start<=end)
     {
-        if(start<(size-start-1))
-        cout<<a[start]<<" "<<a[size-1-start]<<" ";
+        if(start<end)
+        cout<<a[start]<<" "<<a[end]<<" ";
         else
         cout<<a[start];
         start++;
