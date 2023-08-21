@@ -44,6 +44,13 @@ ROW WISE ACCESS:::
 COLUMN WISE ACCESS::
 1 4 7    2 5 8    3 6 9
 
+MULTI-DIMENSIONAL ARRAYS AND FUNCTIONS::
+WE CAN'T LEAVE THE BRACKET OF THE SECOND PARAMETER EMPTY...
+void sum(int a[][])
+{  ]          THIS IS WRONGGG
+FIRST CAN BE EMPTY...
+SECOND AND FURTHER CAN'T BE...
+
 ---------------------------------------------------------------------------------
 CODING VS CODE:::
 ---------------------------------------------------------------------------------
