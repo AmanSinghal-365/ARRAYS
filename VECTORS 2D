@@ -1,0 +1,117 @@
+JUST LIKE VECTORS OF INTEGERS
+WE ARE CREATING VECTOR OF VECTORS...
+
+SYNTAX::
+vector<vector<datatype>> identifier;
+vector<vector<int>> v;
+
+ASSIGNING NO OF ROWS AND COLUMNS...
+vector <vector<int>> arr(3 , vector<int>(3) );
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main()
+{
+    //SYNTAX
+    //vector<vector<DATATYPE> > NAME(NO OF ROWS , vector<INTEGER>(NO OF COLUMNS , WHAT NUM TO INITIALIZE))
+    vector<vector<int> > arr(3,vector<int>(4));
+    //ASSUME ARR IS A VECTOR... AND EACH ELEMENT HAS ANOTHER VECTOR
+    //NO OF ROWS = NO OF ELEMENTS IN OUTER VECTOR...arr.size()
+    //NO OF COLUMNS = NO OF ELEMENTS IN INNER VECTOR...arr[i].size()...
+    cout<<"ENTER ARRAY:: "<<endl;
+    for(int i=0;i<arr.size();i++)
+    {
+        for(int j=0;j<arr[i].size();j++)
+        {
+            cin>>arr[i][j];
+        }
+    }
+    cout<<"PRINTING ARRAY:: "<<endl;
+    for(int i=0;i<arr.size();i++)
+    {
+        for(int j=0;j<arr[i].size();j++)
+        {
+            cout<<arr[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+
+    //NEW VECTOR DECLARATION 
+    vector<vector<int> > brr;
+    vector<int> a(3);
+    vector<int> b(4);
+    vector<int> c(5);
+    brr.push_back(a);
+    brr.push_back(b);
+    brr.push_back(c);
+    cout<<"ENTER ARRAY:: "<<endl;
+    for(int i=0;i<brr.size();i++)
+    {
+        for(int j=0;j<brr[i].size();j++)
+        {
+            cin>>brr[i][j];
+        }
+    }
+    cout<<"PRINTING ARRAY part 2 :: "<<endl;
+    for(int i=0;i<brr.size();i++)
+    {
+        for(int j=0;j<brr[i].size();j++)
+        {
+            cout<<brr[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+
+    cout<<"NEW VECTOR INITIALIZATION WITH -101::"<<endl;
+    vector<vector<int> > Crr(3,vector<int>(4,-101));
+   for(int i=0;i<Crr.size();i++)
+    {
+        for(int j=0;j<Crr[i].size();j++)
+        {
+            cout<<Crr[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+
+  //  cout<<"brr[2][2] = "<<brr[2][2]<<endl;
+  // SIZE IS SAME IN NO OF COLUMNS SPO USED [0] ..AS ITS SAME..IF ITS DIFFERENT CANT USE
+    for(int i=0;i<Crr[0].size();i++)
+    {
+        for(int j=0;j<Crr.size();j++)
+        {
+            cout<<Crr[j][i]<<" ";
+        }
+        cout<<endl;
+    }
+    
+
+}
+
+OUTPUT::
+ENTER ARRAY:: 
+1 2 3 4
+5 6 7 8
+3 4 5 6
+PRINTING ARRAY:: 
+1 2 3 4 
+5 6 7 8 
+3 4 5 6 
+ENTER ARRAY::
+1 2 3
+1 2 3 4
+1 2 3 4 5
+PRINTING ARRAY part 2 ::
+1 2 3
+1 2 3 4
+1 2 3 4 5
+NEW VECTOR INITIALIZATION WITH -101::
+-101 -101 -101 -101
+-101 -101 -101 -101
+-101 -101 -101 -101
+
+-101 -101 -101 
+-101 -101 -101
+-101 -101 -101
+-101 -101 -101
